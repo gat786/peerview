@@ -26,10 +26,20 @@ export default function LoginPage() {
 
   return (
     <div className={styles.dividedLoginContainer}>
-      <div className="">
-
+      <div className=""></div>
+      <div>
+        <button
+          onClick={() => {
+            authenticate({
+              provider: "web3Auth",
+              clientId: process.env.NEXT_PUBLIC_WEB3_CLIENTID,
+            });
+          }}
+        >
+          Login or Signup
+        </button>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className={`${styles.loginForm}`}>
+      {/* <form onSubmit={handleSubmit(onSubmit)} className={`${styles.loginForm}`}>
         <input
           {...register("username", { required: true })}
           placeholder="Username"
@@ -42,7 +52,7 @@ export default function LoginPage() {
         />
         {errors.password && "Password is required"}
         <button>Submit</button>
-      </form>
+      </form> */}
     </div>
   );
 }
