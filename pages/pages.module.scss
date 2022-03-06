@@ -1,0 +1,22 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin: 2rem;
+  width: 300px;
+
+  input{
+    padding: .5rem;
+  }
+
+  button{
+    padding: .5rem;
+    background-color: transparent;
+    border: black 1px solid;
+  }
+}
+
+.dividedLoginContainer{
+  display: flex;
+}
