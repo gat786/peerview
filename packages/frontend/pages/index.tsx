@@ -3,7 +3,7 @@ import { useMoralis } from "react-moralis";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  const { isAuthenticated, authenticate } = useMoralis();
+  const { isAuthenticated, authenticate, user } = useMoralis();
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function Home() {
 
         <div>
           {isAuthenticated ? (
-            <div>Welcome!</div>
+            <div>Welcome! {user.getUsername()}</div>
           ) : (
             <button
               className={styles.logInLink}
