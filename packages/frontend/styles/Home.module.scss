@@ -1,23 +1,22 @@
-
-.tabs{
+.tabs {
   display: none;
 }
 
-.userName{
-  width: 200px;
+.userName {
+  max-width: 100px;
   overflow: hidden;
 }
 
-.topButtons{
+.topButtons {
   display: flex;
   gap: 1rem;
   margin-inline: 1rem;
   padding-block: 1rem;
   overflow-x: scroll;
 
-  button{
+  button {
     border: 1px solid gray;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: transparent;
     color: #151515;
     display: block;
@@ -27,9 +26,23 @@
   }
 }
 
+.myChannelButton {
+  background: transparent;
+  border: 1px solid #151515;
+  padding-block: .5rem;
+  padding-inline: 1rem;
+  border-radius: .5rem;
+  margin-inline: .5rem;
+}
+
 @media screen and (min-width: 1080px) {
 
-  .topButtons{
+  .userName {
+    max-width: 200px;
+    overflow: hidden;
+  }
+
+  .topButtons {
     display: none;
   }
 
