@@ -5,6 +5,7 @@
 .userName {
   max-width: 100px;
   overflow: hidden;
+  position: relative;
 }
 
 .topButtons {
@@ -33,6 +34,29 @@
   padding-inline: 1rem;
   border-radius: .5rem;
   margin-inline: .5rem;
+}
+
+
+.overflowPanel{
+  background-color: #c5c5c5;
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  width: 200px;
+  height: 0px;
+  overflow-y: hidden;
+  transition-property: height;
+  transition-duration: 500ms;
+}
+
+.overflowPanelVisible{
+  height: 45px;
+}
+
+.logoutButton{
+  width: 100%;
+  padding: 1rem;
+  border: none;
 }
 
 @media screen and (min-width: 1080px) {

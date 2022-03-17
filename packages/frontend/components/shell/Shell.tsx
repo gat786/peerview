@@ -1,4 +1,4 @@
-import React, { Children, ReactElement } from "react";
+import React, { Children, ReactElement, useState } from "react";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
 
@@ -6,12 +6,14 @@ import styles from "../../styles/Home.module.scss";
 import { useRouter } from "next/router";
 
 export default function Shell(props: { children: ReactElement }) {
-  const { isAuthenticated, authenticate, user } = useMoralis();
+  const { isAuthenticated, authenticate, user, logout } = useMoralis();
   const { pathname } = useRouter();
+
+  const [isOverflowVisible, setOverflowVisible] = useState<boolean>(false);
 
   return (
     <div>
-      <nav className={styles.nav}>
+      <nav className={styles.nav + " shadow-2"}>
         <Link href="/">
           <h1>Peer View</h1>
         </Link>
@@ -32,8 +34,28 @@ export default function Shell(props: { children: ReactElement }) {
                 </Link>
               )}
 
-              <div className={styles.userName}>
+              <div
+                className={styles.userName}
+                onClick={() => {
+                  setOverflowVisible((current) => !current);
+                }}
+              >
                 Welcome! {user.getUsername()}
+              </div>
+
+              <div
+                className={`${styles.overflowPanel + " shadow-2"} ${
+                  isOverflowVisible && styles.overflowPanelVisible
+                }`}
+              >
+                <button
+                  onClick={() => {
+                    logout();
+                  }}
+                  className={styles.logoutButton}
+                >
+                  Logout
+                </button>
               </div>
             </div>
           ) : (
