@@ -30,14 +30,13 @@
 .myChannelButton {
   background: transparent;
   border: 1px solid #151515;
-  padding-block: .5rem;
+  padding-block: 0.5rem;
   padding-inline: 1rem;
-  border-radius: .5rem;
-  margin-inline: .5rem;
+  border-radius: 0.5rem;
+  margin-inline: 0.5rem;
 }
 
-
-.overflowPanel{
+.overflowPanel {
   background-color: #c5c5c5;
   position: absolute;
   top: 80px;
@@ -49,18 +48,54 @@
   transition-duration: 500ms;
 }
 
-.overflowPanelVisible{
+.overflowPanelVisible {
   height: 45px;
 }
 
-.logoutButton{
+.logoutButton {
   width: 100%;
   padding: 1rem;
   border: none;
 }
 
-@media screen and (min-width: 1080px) {
+.optionCards{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}
 
+.optionsCard {
+  align-items: center;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 200px;
+  justify-content: center;
+  padding: 2rem;
+  cursor: pointer;
+  width: 200px;
+}
+
+.optionsCard:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.22);
+  transition: all 200ms;
+}
+
+.optionsCardTitle {
+  font-size: larger;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-clamp: 1;
+}
+
+.optionsCardIcon {
+  font-size: xx-large;
+}
+
+@media screen and (min-width: 1080px) {
   .userName {
     max-width: 200px;
     overflow: hidden;

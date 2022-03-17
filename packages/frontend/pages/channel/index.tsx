@@ -1,7 +1,10 @@
+import OptionsCard from "components/OptionsCard";
 import Shell from "components/shell/Shell";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
+
+import styles from "styles/Home.module.scss";
 
 export default function MyChannel() {
   return (
@@ -10,8 +13,20 @@ export default function MyChannel() {
         <Head>
           <title>My Channel</title>
         </Head>
-        <div>
-            
+        <div className={styles.optionCards}>
+          <OptionsCard
+            cardIcon={
+              <i className={`material-icons ${styles.optionsCardIcon}`}>add</i>
+            }
+            cardTitle={"Create Livestream"}
+          />
+
+          <OptionsCard
+            cardIcon={
+              <i className={`material-icons ${styles.optionsCardIcon}`}>publish</i>
+            }
+            cardTitle={"Upload Video"}
+          />
         </div>
       </>
     </Shell>
