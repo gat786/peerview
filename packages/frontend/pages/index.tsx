@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import { useMoralis } from "react-moralis";
 import styles from "../styles/Home.module.scss";
@@ -7,6 +8,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Peerview Homepage</title>
+      </Head>
       <nav className={styles.nav}>
         <h1>Peer View</h1>
 
@@ -19,7 +23,7 @@ export default function Home() {
 
         <div>
           {isAuthenticated ? (
-            <div>Welcome! {user.getUsername()}</div>
+            <div className={styles.userName}>Welcome! {user.getUsername()}</div>
           ) : (
             <button
               className={styles.logInLink}
@@ -35,6 +39,14 @@ export default function Home() {
           )}
         </div>
       </nav>
+      <div>
+        <div className={styles.topButtons}>
+          <button>Livestreams</button>
+          <button>Followed Channels</button>
+          <button>Bookmarks</button>
+          <button>NFTs</button>
+        </div>
+      </div>
     </>
   );
 }
