@@ -7,6 +7,8 @@ import React from "react";
 import styles from "styles/Home.module.scss";
 
 export default function MyChannel() {
+  const { pathname } = useRouter();
+
   return (
     <Shell>
       <>
@@ -18,13 +20,17 @@ export default function MyChannel() {
             cardIcon={
               <i className={`material-icons ${styles.optionsCardIcon}`}>add</i>
             }
+            linkTo=""
             cardTitle={"Create Livestream"}
           />
 
           <OptionsCard
             cardIcon={
-              <i className={`material-icons ${styles.optionsCardIcon}`}>publish</i>
+              <i className={`material-icons ${styles.optionsCardIcon}`}>
+                publish
+              </i>
             }
+            linkTo={`${pathname}/upload-video`}
             cardTitle={"Upload Video"}
           />
         </div>
