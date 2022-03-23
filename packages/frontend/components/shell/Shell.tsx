@@ -15,7 +15,7 @@ export default function Shell(props: { children: ReactElement }) {
     <div>
       <nav className={styles.nav + " shadow-2"}>
         <Link href="/">
-          <h1>Peer View</h1>
+          <h1 className="pointer">Peer View</h1>
         </Link>
 
         <div className={styles.tabs}>

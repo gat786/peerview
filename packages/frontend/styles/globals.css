@@ -47,6 +47,10 @@ a {
   position: absolute;
 }
 
+.pointer{
+  cursor: pointer;
+}
+
 .shadow {
   background: #fff;
   border-radius: 2px;
