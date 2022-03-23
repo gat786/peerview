@@ -81,6 +81,7 @@ export default function UploadVideo() {
                     <textarea
                       {...register("content")}
                       className={styles.markdownTextArea}
+                      rows={12}
                     />
                   </TabPane>
                   <TabPane tab="Preview" key="2">
