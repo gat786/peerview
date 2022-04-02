@@ -17,11 +17,11 @@ app.get("/upload", (req, res, next) => {
 
 app.post("/create-stream", async (req, res, next) => {
   try {
-    // const response = await axios.post(
-    //   config.LivepeerUrl + "stream",
-    //   {},
-    //   { headers: { ...get_auth_headers(), "Content-Type": "application/json" } }
-    // );
+    const response = await axios.post(
+      config.LivepeerUrl + "stream",
+      {},
+      { headers: { ...get_auth_headers(), "Content-Type": "application/json" } }
+    );
     return res.json({
       message: "Creating stream",
     });
